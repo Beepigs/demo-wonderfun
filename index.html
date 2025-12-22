@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderFun - Trải nghiệm du lịch kỳ diệu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .logo-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        .sunset-gradient {
+            background: linear-gradient(135deg, #fb923c, #ec4899, #a855f7, #22d3ee);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .glow-text {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center glass">
+        <div class="logo-font text-3xl text-white glow-text">WonderFun</div>
+        <div class="hidden md:flex space-x-8 text-white font-medium">
+            <a href="#features" class="hover:text-orange-200 transition">Tính năng</a>
+            <a href="#how-it-works" class="hover:text-orange-200 transition">Cách hoạt động</a>
+            <a href="#teaser" class="hover:text-orange-200 transition">Cộng đồng</a>
+        </div>
+        <button class="bg-white text-pink-600 px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition shadow-lg">Tải App</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=2000" alt="Beach Sunset" class="w-full h-full object-cover">
+            <div class="absolute inset-0 sunset-gradient opacity-60"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center text-white">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight leading-tight drop-shadow-lg">
+                <span class="logo-font font-normal italic block md:inline">Make Travel</span> <br class="hidden md:block">
+                <span class="logo-font font-normal italic drop-shadow-2xl text-orange-200">WonderFun</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light opacity-90 drop-shadow">
+                Lên kế hoạch du lịch kỳ diệu, kết nối bạn bè realtime và khám phá những góc local chân thực nhất.
+            </p>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
+                <div class="flex gap-4">
+                    <button class="bg-black text-white px-8 py-4 rounded-2xl flex items-center space-x-2 hover:bg-slate-800 transition transform hover:scale-105 shadow-xl">
+                        <i data-lucide="apple"></i>
+                        <span class="text-left"><p class="text-[10px] uppercase">Download on</p><p class="text-lg font-semibold leading-tight">App Store</p></span>
+                    </button>
+                    <button class="bg-black text-white px-8 py-4 rounded-2xl flex items-center space-x-2 hover:bg-slate-800 transition transform hover:scale-105 shadow-xl">
+                        <i data-lucide="play"></i>
+                        <span class="text-left"><p class="text-[10px] uppercase">Get it on</p><p class="text-lg font-semibold leading-tight">Google Play</p></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Waitlist Form -->
+            <div class="glass max-w-md mx-auto p-6 rounded-3xl shadow-2xl border border-white/40">
+                <h3 class="font-semibold mb-4 text-white">Đăng ký để nhận thông báo ngày Launch!</h3>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="Email của bạn..." class="bg-white/20 border border-white/30 rounded-full px-4 py-2 w-full focus:outline-none focus:ring-2 ring-white/50 placeholder:text-white/70 text-white">
+                    <button class="bg-orange-500 hover:bg-orange-400 px-6 py-2 rounded-full font-bold whitespace-nowrap transition shadow-lg text-white">Giữ chỗ</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white opacity-70">
+            <i data-lucide="chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Vì sao chọn WonderFun?</h2>
+                <div class="h-1.5 w-20 bg-gradient-to-r from-orange-400 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 rounded-3xl bg-slate-50 border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lịch trình tự động siêu nhanh</h3>
+                    <p class="text-slate-600 leading-relaxed">Chỉ cần chọn "vibe", WonderFun tự động tạo lịch trình đẹp như catalogue với chi phí minh bạch trong chớp mắt.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 rounded-3xl bg-slate-50 border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 mb-6 group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                        <i data-lucide="eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Feed Realtime "Đang Ở Đây"</h3>
+                    <p class="text-slate-600 leading-relaxed">Xem ngay người thật đang khám phá xung quanh bạn. Cảm hứng du lịch chân thực ngay tại thời điểm hiện tại.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 rounded-3xl bg-slate-50 border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Nhóm chuyến đi Realtime</h3>
+                    <p class="text-slate-600 leading-relaxed">Mời bạn bè, chat, vote địa điểm và theo dõi vị trí của nhau trên bản đồ nhóm với avatar cực cool.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card p-8 rounded-3xl bg-slate-50 border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 flex items-center justify-center text-cyan-600 mb-6 group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                        <i data-lucide="camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Check-in & UGC Local</h3>
+                    <p class="text-slate-600 leading-relaxed">Tự hào chia sẻ "Món ngon đầu hẻm" và giúp cộng đồng luôn có data địa điểm tươi mới nhất.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card p-8 rounded-3xl bg-slate-50 border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-red-100 flex items-center justify-center text-red-600 mb-6 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                        <i data-lucide="alert-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Nút khẩn cấp 1-chạm</h3>
+                    <p class="text-slate-600 leading-relaxed">An tâm tuyệt đối khi du lịch với hệ thống hỗ trợ khẩn cấp tại địa phương luôn sẵn sàng.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card p-8 rounded-3xl bg-indigo-100 border border-indigo-200 group relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-200 flex items-center justify-center text-indigo-700 mb-6">
+                            <i data-lucide="music"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Mini-player Mood</h3>
+                        <p class="text-slate-600 leading-relaxed">Bật nhạc chill tự động theo mood địa điểm và thời tiết bạn đang đứng. Sống trọn từng khoảnh khắc.</p>
+                    </div>
+                    <div class="absolute -right-6 -bottom-6 opacity-10">
+                        <i data-lucide="music" size="120"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 sunset-gradient text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">4 bước đơn giản cùng WonderFun</h2>
+                <p class="opacity-80">Bắt đầu hành trình kỳ diệu của bạn ngay hôm nay.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold border border-white/40 shadow-inner">1</div>
+                    <h3 class="text-xl font-bold mb-2">Chọn Vibe</h3>
+                    <p class="text-sm opacity-80">Xác định tâm trạng: chill, sống ảo, hay quẩy nhiệt?</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold border border-white/40 shadow-inner">2</div>
+                    <h3 class="text-xl font-bold mb-2">Tạo Tour</h3>
+                    <p class="text-sm opacity-80">App tự động lên lịch trình tối ưu và dự tính chi phí.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold border border-white/40 shadow-inner">3</div>
+                    <h3 class="text-xl font-bold mb-2">Mời Bạn</h3>
+                    <p class="text-sm opacity-80">Kết nối nhóm, cùng thảo luận và chuẩn bị lên đường.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold border border-white/40 shadow-inner">4</div>
+                    <h3 class="text-xl font-bold mb-2">Khám Phá</h3>
+                    <p class="text-sm opacity-80">Tận hưởng hành trình với feed realtime và bản đồ nhóm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaser / Testimonials -->
+    <section id="teaser" class="py-24 bg-slate-50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="relative max-w-sm mx-auto">
+                        <!-- Mockup Placeholder -->
+                        <div class="bg-black rounded-[3rem] p-4 shadow-2xl border-[10px] border-slate-900 aspect-[9/19] w-full relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1539635278303-d4002c07dee3?auto=format&fit=crop&q=80&w=800" alt="App Preview" class="w-full h-full object-cover rounded-[2.5rem]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                                <p class="text-xs font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> Live in Da Lat
+                                </p>
+                                <h4 class="text-2xl font-bold">Cháy hết mình cùng WonderFun!</h4>
+                            </div>
+                        </div>
+                        <!-- Floating elements -->
+                        <div class="absolute -right-8 top-1/4 bg-white p-4 rounded-2xl shadow-2xl flex items-center gap-3 animate-float">
+                            <div class="w-10 h-10 rounded-full bg-orange-400 overflow-hidden">
+                                <img src="https://i.pravatar.cc/100?u=1" alt="avatar">
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold">Hoàng Anh đang ở đây</p>
+                                <p class="text-[10px] text-slate-500">Tiệm Cà Phê Bình Minh</p>
+                            </div>
+                        </div>
+                        <div class="absolute -left-8 bottom-1/4 bg-white p-4 rounded-2xl shadow-2xl flex items-center gap-3 animate-float" style="animation-delay: 1.5s">
+                            <div class="w-10 h-10 rounded-full bg-pink-400 overflow-hidden">
+                                <img src="https://i.pravatar.cc/100?u=2" alt="avatar">
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold">Linh Chi đã vote</p>
+                                <p class="text-[10px] text-slate-500">Món ngon đầu hẻm 👍</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold mb-8 leading-tight">Gia nhập cộng đồng <br><span class="logo-font text-5xl text-pink-600">WonderFun</span></h2>
+                    <div class="space-y-6">
+                        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                            <p class="italic text-slate-600 mb-6">"WonderFun giúp mình tiết kiệm hàng giờ đồng hồ ngồi search địa điểm. Lịch trình tự động của app thực sự 'hợp vibe' giới trẻ chúng mình."</p>
+                            <div class="flex items-center gap-3">
+                                <img src="https://i.pravatar.cc/100?u=3" class="w-12 h-12 rounded-full shadow-sm" alt="user">
+                                <div>
+                                    <p class="font-bold">Khánh Linh</p>
+                                    <p class="text-xs text-slate-500">Gen Z Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                            <p class="italic text-slate-600 mb-6">"Đi nhóm sợ nhất là lạc nhau hoặc mỗi đứa một ý. WonderFun giải quyết hết bằng bản đồ nhóm và tính năng vote. Đỉnh thực sự!"</p>
+                            <div class="flex items-center gap-3">
+                                <img src="https://i.pravatar.cc/100?u=4" class="w-12 h-12 rounded-full shadow-sm" alt="user">
+                                <div>
+                                    <p class="font-bold">Đức Mạnh</p>
+                                    <p class="text-xs text-slate-500">Beta Tester</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="logo-font text-4xl mb-6 text-orange-400">WonderFun</div>
+                    <p class="text-slate-400 max-w-sm mb-6 leading-relaxed">WonderFun là ứng dụng du lịch biến mọi hành trình khám phá thành trải nghiệm kết nối đầy niềm vui. Đưa việc đi chơi của giới trẻ lên một tầm cao mới.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition"><i data-lucide="instagram" size="20"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition"><i data-lucide="facebook" size="20"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition"><i data-lucide="twitter" size="20"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Khám phá</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Về WonderFun</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog Du lịch</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tuyển dụng</a></li>
+                        <li><a href="#" class="hover:text-white transition">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Đối tác</h4>
+                    <p class="text-sm text-slate-400 mb-4">Bạn muốn giới thiệu địa điểm của mình trên WonderFun?</p>
+                    <button class="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-2 rounded-full text-sm font-bold hover:scale-105 transition w-full shadow-lg">Đăng ký ngay</button>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-500 text-sm">© 2025 WonderFun Inc. Lên lịch trình, tận hưởng niềm vui.</p>
+                <div class="flex items-center gap-3 text-orange-400">
+                    <span class="text-xs uppercase font-bold tracking-widest opacity-70">Launching in</span>
+                    <div class="flex gap-2 font-mono text-xl font-bold">
+                        <span class="bg-slate-800 px-3 py-1 rounded border border-slate-700 shadow-lg">12</span>:
+                        <span class="bg-slate-800 px-3 py-1 rounded border border-slate-700 shadow-lg">08</span>:
+                        <span class="bg-slate-800 px-3 py-1 rounded border border-slate-700 shadow-lg">45</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
