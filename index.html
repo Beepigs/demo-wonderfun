@@ -97,6 +97,19 @@
             </div>
         </section>
 
+        <!-- Waitlist Form (Home) -->
+        <section class="py-12 bg-slate-50 border-b border-slate-100">
+            <div class="container mx-auto px-6 max-w-xl text-center">
+                <div class="glass p-8 rounded-3xl shadow-xl border border-orange-200 bg-white">
+                    <h3 class="font-bold text-xl mb-4 text-slate-800">Đăng ký nhận thông báo ra mắt ✨</h3>
+                    <form id="waitlist-form" class="flex flex-col md:flex-row gap-3">
+                        <input type="email" id="waitlist-email" required placeholder="Email của bạn..." class="flex-1 px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none focus:ring-2 focus:ring-orange-400">
+                        <button type="submit" class="sunset-bg text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:scale-105 transition">Gửi</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <!-- Features -->
         <section class="py-24 bg-white">
             <div class="container mx-auto px-6">
@@ -221,11 +234,11 @@
                             <h2 class="text-2xl font-bold">Thông tin quán của bạn ✨</h2>
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Tên quán</label>
-                                <input type="text" required placeholder="Nhập tên quán..." class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400 transition">
+                                <input type="text" id="partner-name" required placeholder="Nhập tên quán..." class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400 transition">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Loại hình</label>
-                                <select required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400">
+                                <select id="partner-type" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400">
                                     <option>Cafe / Sống ảo</option>
                                     <option>Quán ăn đặc sản</option>
                                     <option>Homestay</option>
@@ -234,7 +247,7 @@
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Địa chỉ</label>
-                                <textarea required placeholder="Địa chỉ chi tiết..." class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400 h-24 resize-none"></textarea>
+                                <textarea id="partner-address" required placeholder="Địa chỉ chi tiết..." class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400 h-24 resize-none"></textarea>
                             </div>
                         </div>
 
@@ -242,26 +255,26 @@
                         <div id="step-2" class="space-y-6 hidden">
                             <h2 class="text-2xl font-bold">Vibe quán & Đặc trưng 🌈</h2>
                             <p class="text-sm text-slate-400">Chọn ít nhất 3 đặc trưng nổi bật.</p>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="vibe-chip"><input type="checkbox" id="v1" class="hidden"><label for="v1" class="block py-3 px-2 rounded-xl border border-slate-100 text-center text-xs cursor-pointer">📸 Sống ảo</label></div>
-                                <div class="vibe-chip"><input type="checkbox" id="v2" class="hidden"><label for="v2" class="block py-3 px-2 rounded-xl border border-slate-100 text-center text-xs cursor-pointer">🌿 Chill / Relax</label></div>
-                                <div class="vibe-chip"><input type="checkbox" id="v3" class="hidden"><label for="v3" class="block py-3 px-2 rounded-xl border border-slate-100 text-center text-xs cursor-pointer">🎉 Party / Vui</label></div>
-                                <div class="vibe-chip"><input type="checkbox" id="v4" class="hidden"><label for="v4" class="block py-3 px-2 rounded-xl border border-slate-100 text-center text-xs cursor-pointer">❤️ Lãng mạn</label></div>
+                            <div class="grid grid-cols-2 gap-3" id="vibe-selection">
+                                <div class="vibe-chip"><input type="checkbox" id="v1" name="vibe" value="Sống ảo" class="hidden"><label for="v1" class="block py-3 px-2 rounded-xl border border-slate-100 text-center text-xs cursor-pointer">📸 Sống ảo</label></div>
+                                <div class="vibe-chip"><input type="checkbox" id="v2" name="vibe" value="Chill" class="hidden"><label for="v2" class="block py-3 px-2 rounded-xl border border-slate-100 text-center text-xs cursor-pointer">🌿 Chill / Relax</label></div>
+                                <div class="vibe-chip"><input type="checkbox" id="v3" name="vibe" value="Party" class="hidden"><label for="v3" class="block py-3 px-2 rounded-xl border border-slate-100 text-center text-xs cursor-pointer">🎉 Party / Vui</label></div>
+                                <div class="vibe-chip"><input type="checkbox" id="v4" name="vibe" value="Lãng mạn" class="hidden"><label for="v4" class="block py-3 px-2 rounded-xl border border-slate-100 text-center text-xs cursor-pointer">❤️ Lãng mạn</label></div>
                             </div>
                         </div>
 
-                        <!-- Step 3 (Simplified for brevity) -->
+                        <!-- Step 3 -->
                         <div id="step-3" class="space-y-6 hidden">
                             <h2 class="text-2xl font-bold">Giá cả & Chỗ ngồi ☕</h2>
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Giá trung bình/người</label>
-                                <input type="text" placeholder="Ví dụ: 50k - 150k" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400">
+                                <input type="text" id="partner-price" placeholder="Ví dụ: 50k - 150k" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Tiện ích</label>
-                                <div class="space-y-2">
-                                    <label class="flex items-center gap-3"><input type="checkbox" class="accent-orange-500"> <span>Wifi mạnh</span></label>
-                                    <label class="flex items-center gap-3"><input type="checkbox" class="accent-orange-500"> <span>Có máy lạnh</span></label>
+                                <div class="space-y-2" id="utility-selection">
+                                    <label class="flex items-center gap-3"><input type="checkbox" name="utility" value="Wifi mạnh" class="accent-orange-500"> <span>Wifi mạnh</span></label>
+                                    <label class="flex items-center gap-3"><input type="checkbox" name="utility" value="Có máy lạnh" class="accent-orange-500"> <span>Có máy lạnh</span></label>
                                 </div>
                             </div>
                         </div>
@@ -271,11 +284,11 @@
                             <h2 class="text-2xl font-bold">Ảnh & Liên hệ 📸</h2>
                             <div class="border-2 border-dashed border-slate-200 rounded-3xl p-8 text-center bg-slate-50">
                                 <i data-lucide="image" class="mx-auto mb-2 text-slate-300"></i>
-                                <p class="text-xs text-slate-400">Tải lên ít nhất 5 ảnh đẹp nhất của quán.</p>
+                                <p class="text-xs text-slate-400">Tải lên ít nhất 5 ảnh đẹp nhất của quán (trong ứng dụng thực).</p>
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-2">SĐT / Zalo</label>
-                                <input type="tel" required placeholder="09xx xxx xxx" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400">
+                                <input type="tel" id="partner-phone" required placeholder="09xx xxx xxx" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none outline-none ring-1 ring-slate-100 focus:ring-2 focus:ring-orange-400">
                             </div>
                         </div>
 
@@ -311,7 +324,18 @@
         </div>
     </footer>
 
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-3xl flex flex-col items-center gap-4">
+            <div class="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+            <p class="font-bold text-slate-800">Đang gửi dữ liệu...</p>
+        </div>
+    </div>
+
     <script>
+        // GOOGLE SCRIPT URL - Dán URL Web App của bạn vào đây sau khi triển khai
+        const SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_WEB_APP_URL";
+
         // Tab Switch Logic
         function switchTab(tabId) {
             const homeTab = document.getElementById('tab-home');
@@ -380,8 +404,82 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
+        // --- SUBMISSION LOGIC ---
+
+        const loadingOverlay = document.getElementById('loading-overlay');
+
+        async function submitData(data) {
+            if (SCRIPT_URL === "https://script.google.com/macros/s/AKfycbz9HTk9z-sF35E2ZNIakRgczCWule0qYSHFf_SD1al4nqbypAV4_szRO47uFqbvFmUeJA/exec") {
+                console.warn("Bạn chưa cấu hình URL Google Script. Đang giả lập thành công...");
+                return new Promise(resolve => setTimeout(resolve, 1500));
+            }
+
+            loadingOverlay.classList.remove('hidden');
+            try {
+                // Sử dụng no-cors nếu gặp vấn đề về CORS, nhưng lý tưởng nhất là xử lý ở script
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Cần thiết nếu không có header CORS ở server
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                return true;
+            } catch (error) {
+                console.error("Lỗi gửi dữ liệu:", error);
+                throw error;
+            } finally {
+                loadingOverlay.classList.add('hidden');
+            }
+        }
+
+        // Waitlist Submission
+        document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('waitlist-email').value;
+            const data = {
+                type: 'waitlist',
+                timestamp: new Date().toLocaleString(),
+                email: email
+            };
+
+            const success = await submitData(data);
+            if (success) {
+                alert("Cảm ơn bạn! Chúng tôi đã lưu thông tin đăng ký chờ của bạn.");
+                e.target.reset();
+            }
+        });
+
+        // Partner Form Submission
+        document.getElementById('partner-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Gather vibe checkboxes
+            const vibes = Array.from(document.querySelectorAll('input[name="vibe"]:checked')).map(cb => cb.value);
+            // Gather utility checkboxes
+            const utilities = Array.from(document.querySelectorAll('input[name="utility"]:checked')).map(cb => cb.value);
+
+            const data = {
+                type: 'partner',
+                timestamp: new Date().toLocaleString(),
+                storeName: document.getElementById('partner-name').value,
+                storeType: document.getElementById('partner-type').value,
+                address: document.getElementById('partner-address').value,
+                vibes: vibes.join(", "),
+                price: document.getElementById('partner-price').value,
+                utilities: utilities.join(", "),
+                phone: document.getElementById('partner-phone').value
+            };
+
+            const success = await submitData(data);
+            if (success) {
+                alert("Hồ sơ đăng ký đối tác của bạn đã được gửi thành công!");
+                e.target.reset();
+                currentStep = 1;
+                updateStep();
+            }
+        });
+
         // Initialize Icons
         lucide.createIcons();
     </script>
 </body>
-</html>
